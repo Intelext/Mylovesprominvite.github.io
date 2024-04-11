@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prom Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        p {
+            font-size: 20px;
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            background-color: #ff4081;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #ec407a;
+        }
+        #celebrate {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>💖 Will You Go to Prom With Me, My Love? 💖</h1>
+    <p>You are my one-of-a-kind Milanna, from your little looks to your freezing hands (which I will always gladly warm). You have made me so happy to call you mine. So would you do me the honor of letting me dance with you and have this one-of-a-kind night?</p>
+    <button class="button" onclick="celebrate()">Yes, I'd love to! x100</button>
+    <button class="button" id="thinkButton">Nuh uh</button>
+    <div id="celebrate">
+        <div class="tenor-gif-embed" data-postid="1489386840712152603" data-share-method="host" data-aspect-ratio="0.939759" data-width="100%">
+            <a href="https://tenor.com/view/yippee-happy-yippee-creature-yippee-meme-yippee-gif-gif-1489386840712152603">Yippee Happy GIF</a> from <a href="https://tenor.com/search/yippee-gifs">Yippee GIFs</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+    <script>
+        function celebrate() {
+            document.getElementById('celebrate').style.display = 'block';
+            setTimeout(() => {
+                window.open('https://www.youtube.com/watch?v=wDWE_Qp3oKM&pp=ygUSZnVjayBpdCBpIGxvdmUgeW91', '_blank');
+            }, 3000); // Open YouTube link after 3 seconds to allow the GIF to be viewed
+        }
+
+        document.getElementById('thinkButton').addEventListener('mouseover', function(event) {
+            let move = () => {
+                let rect = event.target.getBoundingClientRect();
+                let newX = Math.random() * (window.innerWidth - rect.width);
+                let newY = Math.random() * (window.innerHeight - rect.height);
+                event.target.style.position = 'absolute';
+                event.target.style.left = newX + 'px';
+                event.target.style.top = newY + 'px';
+            };
+            move();
+            setTimeout(move, 100); // Ensure movement even if cursor remains over the button
+        });
+    </script>
+</body>
+</html>
